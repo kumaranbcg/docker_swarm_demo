@@ -1,9 +1,9 @@
 version: "3.9"
 services:
-    myservice1:
+    myservice2:
         image: CONTAINER_IMAGE
         ports:
-            - "2173:2173"
+            - "2174:2174"
         networks:
             - my_network
         deploy:
@@ -32,7 +32,7 @@ services:
             - dbusername
             - dbpassword
         healthcheck:
-            test: ["CMD", "curl", "-f", "http://localhost:2173/healthcheck"]
+            test: ["CMD", "curl", "-f", "http://localhost:2174/healthcheck"]
             interval: 10s
             timeout: 3s
             retries: 5

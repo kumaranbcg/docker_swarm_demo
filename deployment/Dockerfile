@@ -4,5 +4,5 @@ COPY package*.json ./
 RUN npm install
 RUN apk --no-cache add curl
 COPY --chown=node:node . .
-EXPOSE 2173
+EXPOSE 2174
 CMD [ "npm", "start" ]

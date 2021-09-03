@@ -10,7 +10,7 @@ router.get("/healthcheck", (err, res) => {
         `);
 });
 router.get("/", (err, res) => {
-    return res.send("I am Service two");
+    return res.send("I am Service one");
 });
 router.get("/hello", (err, res) => {
     return res.send("Saying hello one...");

@@ -1,9 +1,9 @@
 version: "3.9"
 services:
-    httpdservice:
-        image: 839316227584.dkr.ecr.ap-south-1.amazonaws.com/myrepo:service-1
+    myservice1:
+        image: CONTAINER_IMAGE
         ports:
-            - "2174:2173"
+            - "2173:2173"
         networks:
             - my_network
         deploy:

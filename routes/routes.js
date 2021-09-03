@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios");
 const router = express.Router();
 router.get("/healthcheck", (err, res) => {
     return res.send(`
@@ -8,10 +9,17 @@ router.get("/healthcheck", (err, res) => {
         DB password: ${process.env.DB_PASSWORD}
         `);
 });
-router.get("/myservice-1", (err, res) => {
+router.get("/", (err, res) => {
     return res.send("I am Service two");
 });
-router.get("/myservice-1/hello", (err, res) => {
-    return res.send("Saying hello...");
+router.get("/hello", (err, res) => {
+    return res.send("Saying hello one...");
+});
+router.get("/getService2/healthcheck", async (err, res) => {
+    const { data } = await axios({
+        method: "GET",
+        url: "http://myservice2:2173/healthcheck",
+    }).catch(() => true);
+    return res.send(data);
 });
 module.exports = router;

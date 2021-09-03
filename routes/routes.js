@@ -18,7 +18,7 @@ router.get("/hello", (err, res) => {
 router.get("/getService2/healthcheck", async (err, res) => {
     const { data } = await axios({
         method: "GET",
-        url: "http://myservice2:2173/healthcheck",
+        url: "http://myservice2:2174/healthcheck",
     }).catch(() => true);
     return res.send(data);
 });

@@ -25,7 +25,7 @@ services:
                 delay: 10s
                 order: start-first
         environment:
-            NODE_ENV: development
+            NODE_ENV: main
             DB_USERNAME: /run/secrets/dbusername
             DB_PASSWORD: /run/secrets/dbpassword
         secrets:

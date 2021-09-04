@@ -52,13 +52,13 @@ pipeline {
                 """
             } //steps end
         } //Replacing yaml Variables stage end
-        stage('Deploy to ECS') {
+        stage('Deploy to Docker Swarm') {
             steps {
                  script {
                     sh "docker stack deploy -c ${env.WORKSPACE}/${COMPOSE_FILENAME} ${SERVICE_NAME} --with-registry-auth"
                 }
             } // steps end
-        } // Deploy to ECS ends
+        } // Deploy to Docker Swarm ends
     } //stages end
     post { 
         always { 
